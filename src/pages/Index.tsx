@@ -9,6 +9,7 @@ import { ForYouSection } from "@/components/ForYouSection";
 import { DatesSection } from "@/components/DatesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FacilitatorSection } from "@/components/FacilitatorSection";
+import { FAQSection } from "@/components/FAQSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 
@@ -26,6 +27,7 @@ const Index = () => {
       <DatesSection />
       <TestimonialsSection />
       <FacilitatorSection />
+      <FAQSection />
       <CTASection />
       <Footer />
     </main>
