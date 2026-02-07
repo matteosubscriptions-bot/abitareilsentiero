@@ -1,3 +1,4 @@
+import { Reveal } from "@/hooks/useScrollReveal";
 import forestTrail from "@/assets/forest-trail.jpg";
 
 export const ProblemSection = () => {
@@ -6,7 +7,7 @@ export const ProblemSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <Reveal>
               <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
                 Il problema che riconosci
               </span>
@@ -29,19 +30,21 @@ export const ProblemSection = () => {
                   Non manca qualcosa. Manca spazio per stare.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-elevated">
-                <img
-                  src={forestTrail}
-                  alt="Persona che cammina su un sentiero nella foresta all'alba"
-                  className="w-full h-[500px] object-cover"
-                />
+            <Reveal delay={200}>
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-elevated">
+                  <img
+                    src={forestTrail}
+                    alt="Persona che cammina su un sentiero nella foresta all'alba"
+                    className="w-full h-[500px] object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-forest-light/10 rounded-full -z-10" />
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-golden/10 rounded-full -z-10" />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-forest-light/10 rounded-full -z-10" />
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-golden/10 rounded-full -z-10" />
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

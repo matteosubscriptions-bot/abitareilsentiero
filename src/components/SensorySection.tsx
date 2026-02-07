@@ -1,3 +1,4 @@
+import { Reveal } from "@/hooks/useScrollReveal";
 import { Eye, Ear, Hand, Wind, Heart, Users } from "lucide-react";
 import sensoryTouch from "@/assets/sensory-touch.jpg";
 
@@ -14,7 +15,7 @@ export const SensorySection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <Reveal>
               <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
                 Esperienza sensoriale e relazionale
               </span>
@@ -41,31 +42,33 @@ export const SensorySection = () => {
                   Vista, Tatto, Udito, Olfatto
                 </span>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-elevated">
-                <img
-                  src={sensoryTouch}
-                  alt="Mano che tocca la corteccia di un albero nella foresta"
-                  className="w-full h-[400px] object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl p-6 shadow-elevated max-w-[240px]">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-golden/20 flex items-center justify-center">
-                    <Heart className="w-5 h-5 text-golden" />
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 flex items-center justify-center">
-                    <Users className="w-5 h-5 text-forest-mid" />
-                  </div>
+            <Reveal delay={200}>
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-elevated">
+                  <img
+                    src={sensoryTouch}
+                    alt="Mano che tocca la corteccia di un albero nella foresta"
+                    className="w-full h-[400px] object-cover"
+                  />
                 </div>
-                <blockquote className="font-display text-lg text-foreground italic leading-snug">
-                  "Sopravvivere soli è faticoso. Convivere è possibile."
-                </blockquote>
+                <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl p-6 shadow-elevated max-w-[240px]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-golden/20 flex items-center justify-center">
+                      <Heart className="w-5 h-5 text-golden" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-forest-deep/10 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-forest-mid" />
+                    </div>
+                  </div>
+                  <blockquote className="font-display text-lg text-foreground italic leading-snug">
+                    "Sopravvivere soli è faticoso. Convivere è possibile."
+                  </blockquote>
+                </div>
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-golden/10 rounded-full -z-10" />
               </div>
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-golden/10 rounded-full -z-10" />
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
