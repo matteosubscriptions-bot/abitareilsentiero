@@ -6,7 +6,9 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { SensorySection } from "@/components/SensorySection";
 import { TakeawaySection } from "@/components/TakeawaySection";
 import { ForYouSection } from "@/components/ForYouSection";
+import { ImageBreakSection } from "@/components/ImageBreakSection";
 import { DatesSection } from "@/components/DatesSection";
+import { GallerySection } from "@/components/GallerySection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FacilitatorSection } from "@/components/FacilitatorSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -24,7 +26,9 @@ const Index = () => {
       <SensorySection />
       <TakeawaySection />
       <ForYouSection />
+      <ImageBreakSection />
       <DatesSection />
+      <GallerySection />
       <TestimonialsSection />
       <FacilitatorSection />
       <FAQSection />

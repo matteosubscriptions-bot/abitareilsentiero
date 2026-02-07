@@ -1,29 +1,33 @@
-import { Flame, Compass, UtensilsCrossed, Tent, Moon } from "lucide-react";
+import campfireImg from "@/assets/campfire-forest.jpg";
+import compassImg from "@/assets/compass-navigation.jpg";
+import cookingImg from "@/assets/cooking-outdoor.jpg";
+import shelterImg from "@/assets/shelter-bushcraft.jpg";
+import nightWalkImg from "@/assets/night-walk.jpg";
 
 export const ExperienceSection = () => {
   const experiences = [
     {
-      icon: Flame,
+      image: campfireImg,
       title: "Accensione del fuoco",
       description: "Attenzione e relazione con gli elementi. Un gesto primordiale di presenza.",
     },
     {
-      icon: Compass,
+      image: compassImg,
       title: "Orientamento",
       description: "Leggere il territorio per ritrovare fiducia interiore.",
     },
     {
-      icon: UtensilsCrossed,
+      image: cookingImg,
       title: "Cucina trapper",
       description: "Cibo semplice e condiviso. Nutrimento essenziale.",
     },
     {
-      icon: Tent,
+      image: shelterImg,
       title: "Base di sopravvivenza",
       description: "Riparo, risorse, adattamento. Solo l'essenziale.",
     },
     {
-      icon: Moon,
+      image: nightWalkImg,
       title: "Camminata notturna",
       description: "Riattiva i sensi nell'incertezza. Scopri il buio che non fa paura.",
     },
@@ -49,19 +53,26 @@ export const ExperienceSection = () => {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`group relative bg-cream rounded-2xl p-8 hover:bg-forest-deep transition-colors duration-500 ${
+                className={`group relative rounded-2xl overflow-hidden ${
                   index === 4 ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
-                <div className="w-16 h-16 rounded-2xl bg-forest-deep/10 group-hover:bg-golden/20 flex items-center justify-center mb-6 transition-colors duration-500">
-                  <exp.icon className="w-8 h-8 text-forest-mid group-hover:text-golden transition-colors duration-500" />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={exp.image}
+                    alt={exp.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
-                <h3 className="font-display text-2xl text-foreground group-hover:text-cream mb-3 transition-colors duration-500">
-                  {exp.title}
-                </h3>
-                <p className="text-muted-foreground group-hover:text-cream/70 leading-relaxed transition-colors duration-500">
-                  {exp.description}
-                </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-display text-2xl text-cream mb-2">
+                    {exp.title}
+                  </h3>
+                  <p className="text-cream/70 leading-relaxed text-sm">
+                    {exp.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
