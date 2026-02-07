@@ -1,3 +1,4 @@
+import { Reveal } from "@/hooks/useScrollReveal";
 import campfireImg from "@/assets/campfire-forest.jpg";
 import compassImg from "@/assets/compass-navigation.jpg";
 import cookingImg from "@/assets/cooking-outdoor.jpg";
@@ -37,43 +38,46 @@ export const ExperienceSection = () => {
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
-              Cosa vivi durante l'esperienza
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-4">
-              Arti essenziali del <span className="text-forest-mid italic">bushcraft</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Non per diventare esperto. <strong className="text-foreground">Per tornare essenziale.</strong>
-            </p>
-          </div>
+          <Reveal>
+            <div className="text-center mb-16">
+              <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
+                Cosa vivi durante l'esperienza
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-4">
+                Arti essenziali del <span className="text-forest-mid italic">bushcraft</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Non per diventare esperto. <strong className="text-foreground">Per tornare essenziale.</strong>
+              </p>
+            </div>
+          </Reveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {experiences.map((exp, index) => (
-              <div
+              <Reveal
                 key={index}
-                className={`group relative rounded-2xl overflow-hidden ${
-                  index === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                delay={index * 100}
+                className={index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={exp.image}
-                    alt={exp.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                <div className="group relative rounded-2xl overflow-hidden">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={exp.image}
+                      alt={exp.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="font-display text-2xl text-cream mb-2">
+                      {exp.title}
+                    </h3>
+                    <p className="text-cream/70 leading-relaxed text-sm">
+                      {exp.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-display text-2xl text-cream mb-2">
-                    {exp.title}
-                  </h3>
-                  <p className="text-cream/70 leading-relaxed text-sm">
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Reveal } from "@/hooks/useScrollReveal";
 import {
   Accordion,
   AccordionContent,
@@ -68,45 +69,50 @@ export const FAQSection = () => {
     <section className="py-24 md:py-32 bg-cream">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
-              Domande frequenti
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
-              Tutto quello che ti <span className="text-forest-mid italic">serve sapere</span>
-            </h2>
-          </div>
+          <Reveal>
+            <div className="text-center mb-16">
+              <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
+                Domande frequenti
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
+                Tutto quello che ti <span className="text-forest-mid italic">serve sapere</span>
+              </h2>
+            </div>
+          </Reveal>
 
           <Accordion type="single" collapsible className="space-y-3">
             {faqItems.map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="border border-forest-light/20 rounded-xl overflow-hidden bg-background shadow-soft data-[state=open]:shadow-elevated transition-shadow duration-300"
-              >
-                <AccordionTrigger className="px-6 py-5 hover:bg-forest-deep/5 transition-colors duration-300 [&>svg]:text-forest-mid">
-                  <span className="font-display text-lg text-foreground text-left">
-                    {item.question}
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 pt-2 text-muted-foreground leading-relaxed border-t border-forest-light/10">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <Reveal key={index} delay={index * 60}>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border border-forest-light/20 rounded-xl overflow-hidden bg-background shadow-soft data-[state=open]:shadow-elevated transition-shadow duration-300"
+                >
+                  <AccordionTrigger className="px-6 py-5 hover:bg-forest-deep/5 transition-colors duration-300 [&>svg]:text-forest-mid">
+                    <span className="font-display text-lg text-foreground text-left">
+                      {item.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-2 text-muted-foreground leading-relaxed border-t border-forest-light/10">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Reveal>
             ))}
           </Accordion>
 
-          <div className="mt-12 p-8 bg-golden/5 rounded-2xl border border-golden/20">
-            <p className="text-center text-muted-foreground">
-              Non trovi la risposta che cerchi?{" "}
-              <a
-                href="mailto:info@escapethecity.it"
-                className="font-semibold text-forest-mid hover:text-forest-deep transition-colors"
-              >
-                Contattami direttamente
-              </a>
-            </p>
-          </div>
+          <Reveal delay={600}>
+            <div className="mt-12 p-8 bg-golden/5 rounded-2xl border border-golden/20">
+              <p className="text-center text-muted-foreground">
+                Non trovi la risposta che cerchi?{" "}
+                <a
+                  href="mailto:info@escapethecity.it"
+                  className="font-semibold text-forest-mid hover:text-forest-deep transition-colors"
+                >
+                  Contattami direttamente
+                </a>
+              </p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
