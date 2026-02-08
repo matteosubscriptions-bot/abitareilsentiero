@@ -20,11 +20,11 @@ export const CTASection = () => {
       return;
     }
 
-    const subject = encodeURIComponent(`Richiesta da ${name} – Escape The City`);
+    const subject = encodeURIComponent(`Richiesta da ${name} – Abitare il Sentiero`);
     const body = encodeURIComponent(
       `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
     );
-    window.location.href = `mailto:info@escapethecity.it?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@abitareilsentiero.it?subject=${subject}&body=${body}`;
 
     toast({ title: "Messaggio pronto!", description: "Si aprirà il tuo client email." });
     setForm({ name: "", email: "", message: "" });
@@ -32,7 +32,6 @@ export const CTASection = () => {
 
   return (
     <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img src={campfireForest} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-charcoal/80" />
@@ -46,26 +45,24 @@ export const CTASection = () => {
                 <TreePine className="w-10 h-10 text-golden" />
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6">
-                Abita il tuo <span className="text-golden-soft italic">sentiero</span>
+                Il sentiero non è già scritto.
+                <br />
+                <span className="text-golden-soft italic">Si costruisce camminando.</span>
               </h2>
-              <p className="text-xl md:text-2xl text-cream/80 mb-2 font-display">
-                Dalla sopravvivenza alla convivenza.
-              </p>
-              <p className="text-lg text-cream/60">
-                Attraverso il bosco. Da portare nella vita.
+              <p className="text-lg text-cream/70 max-w-xl mx-auto">
+                Non serve sapere esattamente cosa stai cercando. Scrivici o prenota una chiamata per esplorare insieme.
               </p>
             </div>
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Contact Form */}
             <Reveal delay={100}>
               <form
                 onSubmit={handleSubmit}
                 className="bg-cream/5 backdrop-blur-md rounded-2xl p-8 border border-cream/10 space-y-5"
               >
-                <h3 className="font-display text-2xl text-cream mb-2">Scrivimi</h3>
-                <p className="text-cream/60 text-sm mb-4">Rispondo personalmente entro 24 ore</p>
+                <h3 className="font-display text-2xl text-cream mb-2">Scrivici</h3>
+                <p className="text-cream/60 text-sm mb-4">Per gruppi, scuole, team o informazioni personali</p>
 
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-cream/80">Nome</Label>
@@ -96,7 +93,7 @@ export const CTASection = () => {
                   <Label htmlFor="message" className="text-cream/80">Messaggio</Label>
                   <Textarea
                     id="message"
-                    placeholder="Raccontami cosa cerchi in questa esperienza..."
+                    placeholder="Raccontaci cosa cerchi in questa esperienza..."
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus-visible:ring-golden/50 min-h-[120px]"
@@ -111,7 +108,6 @@ export const CTASection = () => {
               </form>
             </Reveal>
 
-            {/* Calendly Card */}
             <Reveal delay={200}>
               <div className="bg-cream/5 backdrop-blur-md rounded-2xl p-8 border border-cream/10 flex flex-col justify-between h-full">
                 <div>
@@ -123,11 +119,11 @@ export const CTASection = () => {
                   <div className="space-y-4 text-cream/70 text-sm mb-8">
                     <div className="flex items-start gap-3">
                       <span className="text-golden font-display text-lg leading-none mt-0.5">01</span>
-                      <p>Ci conosciamo e capiamo se l'esperienza fa per te</p>
+                      <p>Ci conosciamo e capiamo quale percorso fa per te</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="text-golden font-display text-lg leading-none mt-0.5">02</span>
-                      <p>Ti racconto i dettagli pratici e rispondo alle tue domande</p>
+                      <p>Ti raccontiamo i dettagli pratici e rispondiamo alle tue domande</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="text-golden font-display text-lg leading-none mt-0.5">03</span>
