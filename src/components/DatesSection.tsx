@@ -6,16 +6,15 @@ import { Calendar, MapPin } from "lucide-react";
 interface DateItem {
   date: string;
   location: string;
-  pathway: string;
   status: "available" | "few-spots" | "waitlist";
 }
 
 const dates: DateItem[] = [
-  { date: "15-16 Marzo", location: "Toscana (Appennino)", pathway: "Dalla sopravvivenza all'abitare", status: "available" },
-  { date: "22-23 Marzo", location: "Lazio (Monti Simbruini)", pathway: "Leggere la natura", status: "available" },
-  { date: "5-6 Aprile", location: "Lombardia (Alpi Orobie)", pathway: "Dare forma", status: "few-spots" },
-  { date: "20-21 Aprile", location: "Toscana (Maremma)", pathway: "Sulla stessa traccia", status: "available" },
-  { date: "10-11 Maggio", location: "Lazio (Reatino)", pathway: "Dalla sopravvivenza all'abitare", status: "waitlist" },
+  { date: "15-16 Marzo", location: "Toscana (Appennino)", status: "available" },
+  { date: "20-21 Aprile", location: "Lazio (Monti Simbruini)", status: "available" },
+  { date: "10-11 Maggio", location: "Lombardia (Alpi Orobie)", status: "few-spots" },
+  { date: "12-13 Giugno", location: "Toscana (Maremma)", status: "waitlist" },
+  { date: "24-25 Luglio", location: "Lazio (Reatino)", status: "waitlist" },
 ];
 
 const statusConfig = {
@@ -32,10 +31,10 @@ export const DatesSection = () => {
           <Reveal>
             <div className="text-center mb-16">
               <span className="inline-block text-golden font-body text-sm tracking-[0.2em] uppercase mb-4">
-                Prossimi eventi
+                Prossime date
               </span>
               <h2 className="font-display text-4xl md:text-5xl leading-tight mb-4">
-                Esperienze in programma
+                Esperienza immersiva
               </h2>
               <p className="text-lg text-cream/70">
                 Gruppo ristretto, 1-2 giorni, accompagnamento discreto. <strong className="text-cream">Posti limitati.</strong>
@@ -47,17 +46,14 @@ export const DatesSection = () => {
             {dates.map((item, index) => (
               <Reveal key={index} delay={index * 80}>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between bg-cream/5 backdrop-blur-sm rounded-xl p-6 border border-cream/10 gap-4">
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
                     <div className="flex items-center gap-3">
                       <Calendar className="w-5 h-5 text-golden" />
                       <span className="font-display text-xl">{item.date}</span>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 ml-8">
-                      <div className="flex items-center gap-2 text-cream/70">
-                        <MapPin className="w-4 h-4" />
-                        <span className="text-sm">{item.location}</span>
-                      </div>
-                      <span className="text-golden-soft text-sm font-display italic">{item.pathway}</span>
+                    <div className="flex items-center gap-3 text-cream/70">
+                      <MapPin className="w-5 h-5" />
+                      <span>{item.location}</span>
                     </div>
                   </div>
                   <Badge className={statusConfig[item.status].className}>
@@ -71,7 +67,7 @@ export const DatesSection = () => {
           <Reveal delay={400}>
             <div className="text-center">
               <Button variant="forest" size="xl" asChild>
-                <a href="#contact">Contattaci per saperne di più</a>
+                <a href="#contact">Contattami per capire se fa per te</a>
               </Button>
             </div>
           </Reveal>
