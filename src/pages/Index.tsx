@@ -1,17 +1,10 @@
 import { Hero } from "@/components/Hero";
-import { ProblemSection } from "@/components/ProblemSection";
-import { DifferenceSection } from "@/components/DifferenceSection";
-import { ForestSection } from "@/components/ForestSection";
-import { ExperienceSection } from "@/components/ExperienceSection";
-import { SensorySection } from "@/components/SensorySection";
+import { WhySection } from "@/components/WhySection";
+import { AudienceSection } from "@/components/AudienceSection";
+import { ApproachSection } from "@/components/ApproachSection";
+import { PathwaysSection } from "@/components/PathwaysSection";
 import { TakeawaySection } from "@/components/TakeawaySection";
-import { ForYouSection } from "@/components/ForYouSection";
-import { ImageBreakSection } from "@/components/ImageBreakSection";
 import { DatesSection } from "@/components/DatesSection";
-import { GallerySection } from "@/components/GallerySection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { FacilitatorSection } from "@/components/FacilitatorSection";
-import { FAQSection } from "@/components/FAQSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 
@@ -19,19 +12,12 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      <ProblemSection />
-      <DifferenceSection />
-      <ForestSection />
-      <ExperienceSection />
-      <SensorySection />
+      <WhySection />
+      <AudienceSection />
+      <ApproachSection />
+      <PathwaysSection />
       <TakeawaySection />
-      <ForYouSection />
-      <ImageBreakSection />
       <DatesSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <FacilitatorSection />
-      <FAQSection />
       <CTASection />
       <Footer />
     </main>
