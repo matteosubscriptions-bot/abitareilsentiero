@@ -1,20 +1,20 @@
 import { Reveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Users } from "lucide-react";
 
 interface DateItem {
   date: string;
   location: string;
+  spots: number;
   status: "available" | "few-spots" | "waitlist";
 }
 
 const dates: DateItem[] = [
-  { date: "15-16 Marzo", location: "Toscana (Appennino)", status: "available" },
-  { date: "20-21 Aprile", location: "Lazio (Monti Simbruini)", status: "available" },
-  { date: "10-11 Maggio", location: "Lombardia (Alpi Orobie)", status: "few-spots" },
-  { date: "12-13 Giugno", location: "Toscana (Maremma)", status: "waitlist" },
-  { date: "24-25 Luglio", location: "Lazio (Reatino)", status: "waitlist" },
+  { date: "15-16 Marzo", location: "Appennino Tosco-Emiliano", spots: 12, status: "available" },
+  { date: "20-21 Aprile", location: "Appennino Centrale", spots: 8, status: "few-spots" },
+  { date: "10-11 Maggio", location: "Appennino Ligure", spots: 12, status: "available" },
+  { date: "12-13 Giugno", location: "Appennino Tosco-Emiliano", spots: 0, status: "waitlist" },
 ];
 
 const statusConfig = {
@@ -34,10 +34,10 @@ export const DatesSection = () => {
                 Prossime date
               </span>
               <h2 className="font-display text-4xl md:text-5xl leading-tight mb-4">
-                Esperienza immersiva
+                Prossime <span className="italic text-golden-soft">date</span>
               </h2>
               <p className="text-lg text-cream/70">
-                Gruppo ristretto, 1-2 giorni, accompagnamento discreto. <strong className="text-cream">Posti limitati.</strong>
+                Ogni esperienza: <strong className="text-cream">massimo 12 persone.</strong>
               </p>
             </div>
           </Reveal>
@@ -55,6 +55,10 @@ export const DatesSection = () => {
                       <MapPin className="w-5 h-5" />
                       <span>{item.location}</span>
                     </div>
+                    <div className="flex items-center gap-2 text-cream/50 text-sm">
+                      <Users className="w-4 h-4" />
+                      <span>1 giorno e mezzo nel bosco</span>
+                    </div>
                   </div>
                   <Badge className={statusConfig[item.status].className}>
                     {statusConfig[item.status].label}
@@ -65,10 +69,13 @@ export const DatesSection = () => {
           </div>
 
           <Reveal delay={400}>
-            <div className="text-center">
+            <div className="text-center space-y-4">
               <Button variant="forest" size="xl" asChild>
-                <a href="#contact">Contattami per capire se fa per te</a>
+                <a href="#contact">Contattami per verificare disponibilità</a>
               </Button>
+              <p className="text-cream/50 text-sm">
+                Cosa include: vitto, alloggio, guida, materiali (dettagli dopo il contatto)
+              </p>
             </div>
           </Reveal>
         </div>

@@ -1,44 +1,28 @@
 import { Reveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CalendarCheck } from "lucide-react";
-import campfireForest from "@/assets/campfire-forest.jpg";
 
-export const CTASection = () => {
+export const FinalCTASection = () => {
   return (
-    <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <img src={campfireForest} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-charcoal/80" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-24 md:py-32 bg-forest-deep text-cream">
+      <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
-            <span className="inline-block text-golden font-body text-sm tracking-[0.2em] uppercase mb-4">
-              Il prossimo passo
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6">
-              Scopri se questo spazio è <span className="text-golden-soft italic">per te</span>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight mb-6">
+              Sei arrivato <span className="text-golden-soft italic">fin qui</span>
             </h2>
           </Reveal>
 
           <Reveal delay={100}>
             <div className="space-y-4 text-lg text-cream/80 leading-relaxed mb-10">
               <p>
-                Escape the City non è per tutti. E va bene così.
+                Se hai letto fino a questo punto, probabilmente qualcosa ha risuonato.
               </p>
-              <p>
-                <strong className="text-cream">Prima di prenotare, voglio parlare con te.</strong>
-              </p>
-              <p>
-                15–20 minuti. Una chiamata o una conversazione su WhatsApp.
+              <p className="text-cream font-display text-xl italic">
+                Forse è il momento di parlarne.
               </p>
               <p className="text-cream/60">
-                Per me richiede tempo ed energia, ma questa io la chiamo cura. Cura per avere le persone giuste nel gruppo. Cura per offrire questa esperienza solo a chi cerca davvero questo.
-              </p>
-              <p className="text-golden-soft italic font-display text-xl">
-                Non vendo. Non convinco. Se è giusto, lo senti.
+                Non per convincerti. Ma per capire insieme se Escape the City è ciò che stai cercando.
               </p>
             </div>
           </Reveal>
