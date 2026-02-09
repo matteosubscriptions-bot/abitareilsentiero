@@ -13,54 +13,44 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "Chi può partecipare all'evento?",
-    answer:
-      "L'esperienza è aperta a tutti coloro che vivono in un ambiente urbano o strutturato e cercano qualcosa di essenziale e reale. Non importa l'età: conta la disponibilità a metterti in gioco, a camminare nel bosco e a stare in gruppo. Se hai dubbi sulla tua idoneità, scrivimi e ne parliamo direttamente.",
+    question: "Quanto costa?",
+    answer: "Voglio prima capire se l'esperienza fa per te. Poi affrontiamo questo aspetto nella chiamata.",
   },
   {
-    question: "Dove si svolgerà il ritiro?",
-    answer:
-      "Ogni edizione di Escape the City si svolge in un territorio diverso italiano, scelto per l'autenticità del paesaggio e l'opportunità di apprendimento. Le prossime date si terranno in Toscana, Lazio e Lombardia, in zone montane lontane dal rumore della città. Tutte le coordinate specifiche e le indicazioni di viaggio vengono comunicate al momento della conferma della prenotazione.",
+    question: "Dove si svolge esattamente?",
+    answer: "La location specifica ti viene comunicata una volta allineati. Si tratta di luoghi nel bosco dell'Appennino, lontani da centri abitati.",
   },
   {
-    question: "Cosa è incluso nel prezzo?",
-    answer:
-      "Nel prezzo è incluso l'accompagnamento completo durante l'esperienza, tutte le attività di bushcraft, il vitto (pasti semplici e condivisi preparati insieme), il riparo e tutto ciò che serve per la sopravvivenza essenziale nel bosco. Non è incluso il viaggio per raggiungere il luogo della riunione.",
+    question: "Che livello fisico serve?",
+    answer: "Nessuna preparazione atletica. Non è una prova di resistenza. Le attività sono accessibili a chiunque possa camminare e usare le mani.",
   },
   {
-    question: "Cosa devo portare con me?",
-    answer:
-      "Dipende dalla stagione e dalla durata, ma generalmente: indumenti a strati (il bosco è sempre fresco), scarpe da trekking robuste, uno zaino, un sacco a pelo, una torcia, articoli da toilette essenziali e una mente aperta. Ti fornirò una lista completa una volta confermata la tua iscrizione, personalizzata in base alle condizioni meteorologiche previste.",
+    question: "Vengo da solo/a?",
+    answer: "Sì, la maggior parte delle persone arriva da sola. Il gruppo si forma lì.",
   },
   {
-    question: "È necessario essere in forma per partecipare?",
-    answer:
-      "Non devi essere un atleta. L'esperienza è costruita intorno al movimento consapevole e all'adattamento ai tuoi ritmi. Se hai preoccupazioni fisiche o limitazioni di mobilità, condividile con me al momento della prenotazione: insieme valuteremo se l'esperienza fa per te e come adattarla.",
+    question: "Ci sono momenti di condivisione o è tutto in silenzio?",
+    answer: "Escape the City alterna momenti di silenzio e momenti di parola. Non è isolamento assoluto né cerchio di condivisione forzato. È un equilibrio naturale.",
   },
   {
-    question: "Posso partecipare se non ho mai fatto esperienze di questo tipo?",
-    answer:
-      "Assolutamente sì. Anzi, non è un'esperienza pensata per esperti di bushcraft. È un laboratorio dove le pratiche — accendere un fuoco, orientarsi, camminare — diventano strumenti per osservarti. L'assenza di esperienza previa non è un ostacolo; è spesso un vantaggio perché non hai abitudini consolidate da cui distaccarti.",
+    question: "Cosa devo portare?",
+    answer: "Una volta confermata la partecipazione, ti invio una lista dettagliata dell'equipaggiamento necessario (abbigliamento adeguato, scarpe da trekking, sacco a pelo se ce l'hai).",
   },
   {
-    question: "Come posso prenotare il mio posto?",
-    answer:
-      "Puoi contattarmi direttamente via email (info@escapethecity.it) o dal form nella sezione 'Contatti'. In entrambi i casi, parliamo per capire insieme se l'esperienza è adatta a te e accertare i dettagli pratici. Le iscrizioni sono aperte fino a un mese prima della data, salvo esaurimento posti.",
+    question: "E se piove?",
+    answer: "L'esperienza si svolge ugualmente. La natura non si ferma con la pioggia, e nemmeno noi. Ti chiediamo solo di avere abbigliamento adeguato.",
   },
   {
-    question: "Qual è la politica di cancellazione?",
-    answer:
-      "Comprendo che piani cambiano. Se cancelli con almeno 14 giorni di preavviso, ricevi il 100% del rimborso. Cancellazioni con meno di 14 giorni comportano una perdita del 50%. Se la cancellazione avviene meno di 7 giorni prima, il rimborso non è possibile. Situazioni eccezionali possono essere discusse direttamente.",
+    question: "Posso usare il telefono?",
+    answer: "Puoi tenerlo spento nello zaino per emergenze. L'esperienza richiede di staccarsi dai dispositivi.",
   },
   {
-    question: "Il ritiro si svolge anche in caso di maltempo?",
-    answer:
-      "Sì, il bosco non si ferma per il maltempo. L'esperienza è disegnata per insegnarti ad adattarti, non a fuggire. Pioggia, freddo e vento fanno parte dell'insegnamento. Ovviamente, nel caso di condizioni davvero estreme (fulmini, neve abbondante) che rendessero pericoloso stare al campo, avremo piani di ripiego o posticipo della data.",
+    question: "È sicuro?",
+    answer: "Sì. Ogni esperienza è accompagnata da guide con formazione specifica e assicurazione. Le attività non sono estreme né pericolose.",
   },
   {
-    question: "Posso regalare l'esperienza a qualcuno?",
-    answer:
-      "Certo. È un dono bellissimo. Puoi contattarmi per richiedere un voucher o un certificato regalo. La persona che riceve il dono potrà poi mettersi in contatto con me per scegliere una data e discutere gli ultimi dettagli insieme.",
+    question: "Cosa include concretamente?",
+    answer: "Alloggio (rifugio/bivacco in bosco), tutti i pasti (da venerdì sera a domenica pranzo), guida esperta per tutta la durata, materiali necessari per le attività, assicurazione.",
   },
 ];
 
@@ -99,20 +89,6 @@ export const FAQSection = () => {
               </Reveal>
             ))}
           </Accordion>
-
-          <Reveal delay={600}>
-            <div className="mt-12 p-8 bg-golden/5 rounded-2xl border border-golden/20">
-              <p className="text-center text-muted-foreground">
-                Non trovi la risposta che cerchi?{" "}
-                <a
-                  href="mailto:info@escapethecity.it"
-                  className="font-semibold text-forest-mid hover:text-forest-deep transition-colors"
-                >
-                  Contattami direttamente
-                </a>
-              </p>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>
