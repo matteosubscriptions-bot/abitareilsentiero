@@ -1,72 +1,154 @@
-import { Reveal } from "@/hooks/useScrollReveal";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, CalendarCheck } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { TreePine, Send, CalendarCheck } from "lucide-react";
+import { Reveal } from "@/hooks/useScrollReveal";
+import { toast } from "@/hooks/use-toast";
 import campfireForest from "@/assets/campfire-forest.jpg";
 
 export const CTASection = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, email, message } = form;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      toast({ title: "Compila tutti i campi", variant: "destructive" });
+      return;
+    }
+
+    const subject = encodeURIComponent(`Richiesta da ${name} – Abitare il Sentiero`);
+    const body = encodeURIComponent(
+      `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
+    );
+    window.location.href = `mailto:info@abitareilsentiero.it?subject=${subject}&body=${body}`;
+
+    toast({ title: "Messaggio pronto!", description: "Si aprirà il tuo client email." });
+    setForm({ name: "", email: "", message: "" });
+  };
+
   return (
     <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img src={campfireForest} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-charcoal/80" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto">
           <Reveal>
-            <span className="inline-block text-golden font-body text-sm tracking-[0.2em] uppercase mb-4">
-              Il prossimo passo
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6">
-              Scopri se questo spazio è <span className="text-golden-soft italic">per te</span>
-            </h2>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <div className="space-y-4 text-lg text-cream/80 leading-relaxed mb-10">
-              <p>
-                Escape the City non è per tutti. E va bene così.
-              </p>
-              <p>
-                <strong className="text-cream">Prima di prenotare, voglio parlare con te.</strong>
-              </p>
-              <p>
-                15–20 minuti. Una chiamata o una conversazione su WhatsApp.
-              </p>
-              <p className="text-cream/60">
-                Per me richiede tempo ed energia, ma questa io la chiamo cura. Cura per avere le persone giuste nel gruppo. Cura per offrire questa esperienza solo a chi cerca davvero questo.
-              </p>
-              <p className="text-golden-soft italic font-display text-xl">
-                Non vendo. Non convinco. Se è giusto, lo senti.
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-golden/20 backdrop-blur-sm mb-8">
+                <TreePine className="w-10 h-10 text-golden" />
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6">
+                Il sentiero non è già scritto.
+                <br />
+                <span className="text-golden-soft italic">Si costruisce camminando.</span>
+              </h2>
+              <p className="text-lg text-cream/70 max-w-xl mx-auto">
+                Non serve sapere esattamente cosa stai cercando. Scrivici o prenota una chiamata per esplorare insieme.
               </p>
             </div>
           </Reveal>
 
-          <Reveal delay={200}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="forest" size="lg" className="w-full sm:w-auto group" asChild>
-                <a
-                  href="https://wa.me/39XXXXXXXXXX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Scrivimi su WhatsApp
-                </a>
-              </Button>
-              <Button variant="forestOutline" size="lg" className="w-full sm:w-auto group" asChild>
-                <a
-                  href="https://calendly.com/tuo-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <CalendarCheck className="w-5 h-5 mr-2" />
-                  Prenota una chiamata
-                </a>
-              </Button>
-            </div>
-          </Reveal>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            <Reveal delay={100}>
+              <form
+                onSubmit={handleSubmit}
+                className="bg-cream/5 backdrop-blur-md rounded-2xl p-8 border border-cream/10 space-y-5"
+              >
+                <h3 className="font-display text-2xl text-cream mb-2">Scrivici</h3>
+                <p className="text-cream/60 text-sm mb-4">Per gruppi, scuole, team o informazioni personali</p>
+
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-cream/80">Nome</Label>
+                  <Input
+                    id="name"
+                    placeholder="Il tuo nome"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus-visible:ring-golden/50"
+                    maxLength={100}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-cream/80">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="la.tua@email.it"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus-visible:ring-golden/50"
+                    maxLength={255}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-cream/80">Messaggio</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Raccontaci cosa cerchi in questa esperienza..."
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus-visible:ring-golden/50 min-h-[120px]"
+                    maxLength={1000}
+                  />
+                </div>
+
+                <Button variant="forest" size="lg" type="submit" className="w-full group">
+                  <Send className="w-4 h-4 mr-2" />
+                  Invia messaggio
+                </Button>
+              </form>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <div className="bg-cream/5 backdrop-blur-md rounded-2xl p-8 border border-cream/10 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="font-display text-2xl text-cream mb-2">Prenota una call</h3>
+                  <p className="text-cream/60 text-sm mb-6">
+                    Preferisci parlarne a voce? Prenota una chiamata conoscitiva gratuita di 15 minuti.
+                  </p>
+
+                  <div className="space-y-4 text-cream/70 text-sm mb-8">
+                    <div className="flex items-start gap-3">
+                      <span className="text-golden font-display text-lg leading-none mt-0.5">01</span>
+                      <p>Ci conosciamo e capiamo quale percorso fa per te</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-golden font-display text-lg leading-none mt-0.5">02</span>
+                      <p>Ti raccontiamo i dettagli pratici e rispondiamo alle tue domande</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-golden font-display text-lg leading-none mt-0.5">03</span>
+                      <p>Nessun impegno — solo una chiacchierata sincera</p>
+                    </div>
+                  </div>
+                </div>
+
+                <Button variant="forestOutline" size="lg" className="w-full group" asChild>
+                  <a
+                    href="https://calendly.com/tuo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <CalendarCheck className="w-5 h-5 mr-2" />
+                    Scegli data e ora
+                  </a>
+                </Button>
+
+                <p className="text-center text-cream/40 text-xs mt-4">
+                  Gratuita · 15 min · Senza impegno
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

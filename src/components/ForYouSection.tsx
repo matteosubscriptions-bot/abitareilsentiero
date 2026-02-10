@@ -3,23 +3,16 @@ import { Check, X } from "lucide-react";
 
 export const ForYouSection = () => {
   const yesReasons = [
-    "Hai una vita apparentemente stabile: casa, lavoro, sicurezza",
-    "Ti senti spesso in tensione, come se dovessi controllare tutto",
-    "Funzioni bene nella società, ma senti una disconnessione silenziosa",
-    "Hai già provato trekking, viaggi, weekend outdoor — ma cerchi qualcosa di diverso",
-    "Non cerchi una svolta, ma presenza",
-    "Vuoi vivere esperienze, non solo accumulare abilità",
-    "Sei disposto a osservarti mentre fai",
-    "Vuoi crescere attraverso il corpo e i sensi, non solo attraverso la mente",
+    "Vivi in ambiente urbano/strutturato",
+    "Cerchi qualcosa di essenziale e reale",
+    "Sei curioso del bosco",
+    "Pronto a metterti in gioco fisicamente",
   ];
 
   const noReasons = [
-    "Cerchi performance o certificazioni",
-    "Vuoi motivazione o insegnamenti spirituali",
-    "Cerchi adrenalina o survival sportivo",
-    "Non sei disponibile a fermarti e osservarti",
-    "Non ti senti a tuo agio con momenti di silenzio e momenti di condivisione",
-    "Cerchi comfort e servizi strutturati",
+    "Vuoi comfort garantito",
+    "Cerchi risultati rapidi",
+    "Preferisci intrattenimento passivo",
   ];
 
   return (
@@ -29,10 +22,10 @@ export const ForYouSection = () => {
           <Reveal>
             <div className="text-center mb-16">
               <span className="inline-block text-forest-light font-body text-sm tracking-[0.2em] uppercase mb-4">
-                Per chi è
+                È per te?
               </span>
               <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
-                Questo spazio è <span className="text-forest-mid italic">per te</span> se:
+                Scopri se <span className="text-forest-mid italic">fa per te</span>
               </h2>
             </div>
           </Reveal>
