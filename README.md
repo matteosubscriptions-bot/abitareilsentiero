@@ -1,73 +1,73 @@
-# Welcome to your Lovable project
+# Abitare il Sentiero — `/app`
 
-## Project info
+Sito statico dell'app "Abitare il Sentiero": tre (e più) esperienze in natura
+per uscire dalla modalità sopravvivenza, tornare presenti e abitare il sentiero.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+È una single-page app React (HashRouter) già compilata in un singolo bundle
+JavaScript. Non richiede build: si carica così com'è su un qualsiasi hosting
+statico.
 
-## How can I edit this code?
+## Struttura
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+.
+├── index.html          → pagina HTML principale (carica assets/app.js)
+├── assets/
+│   └── app.js          → bundle JavaScript dell'app React (già compilato)
+├── images/             → immagini JPG
+├── videos/             → video MP4
+├── favicon.ico
+├── robots.txt
+└── .htaccess           → MIME types, CORS e fallback SPA per Apache
 ```
 
-**Edit a file directly in GitHub**
+## Pagine (HashRouter)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Percorso | Pagina |
+|----------|--------|
+| `#/` | Home |
+| `#/escape-the-city` | Escape the City |
+| `#/accendi-il-tuo-fuoco` | Accendi il tuo Fuoco |
+| `#/la-mappa-del-tuo-viaggio` | La Mappa del tuo Viaggio |
+| `#/cammino` | Il Cammino |
+| `#/via-degli-dei` | Via degli Dei |
+| `#/elementi-di-convivenza` | Elementi di Convivenza |
+| `#/chi-sono` | Chi Sono |
 
-**Use GitHub Codespaces**
+## Anteprima locale
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Serve la cartella con un qualsiasi server statico, dalla radice del progetto:
 
-## What technologies are used for this project?
+```sh
+python3 -m http.server 8099
+# poi apri http://localhost:8099/
+```
 
-This project is built with:
+## Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Carica tutto il contenuto di questa cartella sul server statico. Servendo dalla
+radice del dominio tutti i percorsi delle risorse (sia relativi `images/…` sia
+assoluti `/images/…`) si risolvono correttamente.
 
-## How can I deploy this project?
+Per il caricamento via FTP in una sottocartella `/app/`, carica index.html,
+assets/, images/ e videos/ dentro `/app/`.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Modificare i contenuti
 
-## Can I connect a custom domain to my Lovable project?
+- Testi di `<title>` / meta: `index.html`
+- Testi e logica dell'app: `assets/app.js` (bundle React minificato — cerca le
+  stringhe di testo da modificare)
 
-Yes, you can!
+## Media segnaposto da sostituire
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Alcuni file multimediali non erano disponibili nel materiale di partenza e sono
+stati **ricostruiti come segnaposto**. Vanno sostituiti con i media definitivi
+mantenendo gli stessi nomi file:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `images/full-abitare.jpg`, `images/full-natura.jpg` — generati da foto di
+  bosco esistenti (sfondi full-bleed)
+- `images/per-chi-sara.jpg`, `images/per-chi-marco.jpg`,
+  `images/per-chi-federica.jpg`, `images/per-chi-andrea.jpg` — ritratti
+  segnaposto delle personas
+- `videos/hero.mp4`, `videos/mappa-viaggio.mp4` — clip segnaposto (lento zoom
+  generato dalle immagini corrispondenti)
