@@ -1,27 +1,22 @@
-# Forza MIME types corretti per i file statici
-AddType application/javascript .js .mjs
-AddType application/json .json
+# Forza i MIME type corretti per i file statici.
+# Importante: serve i .js come JavaScript (evita l'errore
+# "Expected a JavaScript-or-Wasm module script ... text/plain").
+AddType text/javascript .js .mjs
 AddType text/css .css
+AddType application/json .json
 AddType image/svg+xml .svg
 AddType image/webp .webp
 AddType video/mp4 .mp4
 
-# Per Apache >= 2.4.30
 <IfModule mime_module>
-    AddHandler application/javascript .js .mjs
+    AddType text/javascript .js .mjs
 </IfModule>
 
-# Abilita CORS per i font e le risorse statiche
+# CORS per font e risorse statiche
 <IfModule mod_headers.c>
     <FilesMatch "\.(js|mjs|css|woff|woff2|ttf|otf|eot|svg|png|jpg|jpeg|gif|webp|mp4|webm)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 </IfModule>
 
-# Fallback per SPA routing (HashRouter non ne ha bisogno, ma utile se passi a BrowserRouter)
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . index.html [L]
-</IfModule>
+# Sito multi-pagina: ogni pagina è un vero file .html, nessun rewrite necessario.
