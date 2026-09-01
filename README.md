@@ -110,4 +110,10 @@ nomi da mantenere):
 - `images/per-chi-sara.jpg`, `images/per-chi-marco.jpg`,
   `images/per-chi-federica.jpg`, `images/per-chi-andrea.jpg` — ritratti personas
 - `videos/hero.mp4`, `videos/mappa-viaggio.mp4` — clip segnaposto
+- `images/testimonial-1.jpg … testimonial-6.jpg` +
+  `videos/testimonial-1.mp4 … testimonial-6.mp4` — **testimonianze video
+  segnaposto** (ritratto con pulsante play + breve clip). Sostituiscile con i
+  video/foto reali dei partecipanti mantenendo gli stessi nomi file; i testi
+  delle citazioni sono nelle sezioni testimonianze di `index.html` ed
+  `escape-the-city.html` e vanno rimpiazzati con quelli veri.
 - `downloads/dalla-sopravvivenza-alla-convivenza.pdf` — la guida (da caricare)
