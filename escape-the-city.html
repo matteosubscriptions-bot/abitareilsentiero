@@ -57,7 +57,11 @@
       <h1 class="ais-hero__title">Esci dal rumore.</h1>
       <p class="ais-hero__sub">Torna a sentire dove sei.</p>
       <p class="ais-hero__lead">Due giorni nel selvatico: cammini, ti orienti, costruisci, accendi un fuoco, cucini, esplori e passi una notte nel bosco. Ma soprattutto hai tempo per una cosa diventata sorprendentemente difficile: esserci.</p>
-      <p class="ais-microrow">Circa 30 ore · 2 giorni e 1 notte · Appennino</p>
+      <div class="ais-chips">
+        <span class="ais-chip"><svg class="ais-ico"><use href="#i-clock"></use></svg>Circa 30 ore</span>
+        <span class="ais-chip"><svg class="ais-ico"><use href="#i-moon"></use></svg>2 giorni e 1 notte</span>
+        <span class="ais-chip"><svg class="ais-ico"><use href="#i-pin"></use></svg>Appennino</span>
+      </div>
       <div class="ais-cta-row">
         <a class="ais-btn-dark ais-arrow" href="#date">Scopri le prossime date</a>
         <a class="ais-btn-ghost" href="#parliamone" style="color:#fff;border-color:rgba(255,255,255,.6)">Parliamone</a>
@@ -117,13 +121,17 @@
   </section>
 
   <!-- COME FUNZIONA -->
-  <section class="ais-sec ais-sec--forest">
+  <section class="ais-photopanel">
+    <div class="ais-photopanel__bg"><img alt="Nel bosco" src="images/full-cammino.jpg"/></div>
+    <div class="ais-photopanel__scrim"></div>
     <div class="ais-wrap ais-narrow ais-center">
-      <span class="ais-eyebrow">Come funziona</span>
-      <h2 class="ais-display">Prima fai. Poi capisci.</h2>
-      <div class="ais-stack ais-lead" style="margin-top:18px;color:rgba(255,255,255,.85)">
-        <p>Non passeremo il weekend a spiegarti cosa dovresti vedere o sentire. Ti metteremo nelle condizioni di fare esperienza. Poi osserveremo cosa è successo. E da lì potranno nascere domande.</p>
-        <p class="ais-italic" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px">Il significato non viene deciso prima. Lo scopri tu.</p>
+      <div class="ais-glass ais-glass--dark ais-glasscard">
+        <span class="ais-eyebrow ais-eyebrow--onphoto">Come funziona</span>
+        <h2 class="ais-display" style="color:#fff">Prima fai. Poi capisci.</h2>
+        <div class="ais-stack ais-lead" style="margin-top:18px;color:rgba(255,255,255,.9)">
+          <p>Non passeremo il weekend a spiegarti cosa dovresti vedere o sentire. Ti metteremo nelle condizioni di fare esperienza. Poi osserveremo cosa è successo. E da lì potranno nascere domande.</p>
+          <p class="ais-italic" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;color:#fff">Il significato non viene deciso prima. Lo scopri tu.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -169,7 +177,7 @@
   </section>
 
   <!-- PER CHI È / NON È -->
-  <section class="ais-sec ais-sec--sand">
+  <section class="ais-sec ais-sec--sand ais-sec--tint">
     <div class="ais-wrap">
       <div class="ais-narrow"><span class="ais-eyebrow">Per chi è</span><h2 class="ais-display">Escape è per te se…</h2></div>
       <div class="ais-two">
@@ -199,16 +207,22 @@
   </section>
 
   <!-- COSA PORTI A CASA -->
-  <section class="ais-sec ais-sec--cream ais-center">
-    <div class="ais-wrap ais-narrow">
-      <span class="ais-eyebrow">Cosa porti a casa</span>
-      <h2 class="ais-display">Non possiamo dirtelo in anticipo.</h2>
-      <p class="ais-lead ais-muted" style="margin-top:14px">Potresti tornare con una nuova competenza, un ricordo, una domanda, una nuova attenzione, un luogo che ora riconosci, una persona conosciuta nel weekend, un oggetto costruito con le tue mani. Ma non possiamo dirti in anticipo quale sarà la tua esperienza. Ed è proprio questo il bello.</p>
+  <section class="ais-sec ais-sec--cream">
+    <div class="ais-wrap">
+      <div class="ais-show">
+        <div class="ais-show__media"><img alt="Ricordi dal weekend" src="images/cammino-giorno2.jpg"/></div>
+        <div>
+          <span class="ais-eyebrow">Cosa porti a casa</span>
+          <h2 class="ais-display">Non possiamo dirtelo in anticipo.</h2>
+          <p class="ais-lead ais-muted" style="margin-top:14px">Potresti tornare con una nuova competenza, un ricordo, una domanda, una nuova attenzione, un luogo che ora riconosci, una persona conosciuta nel weekend, un oggetto costruito con le tue mani.</p>
+          <p class="ais-lead" style="margin-top:12px">Ma non possiamo dirti in anticipo quale sarà la tua esperienza. Ed è proprio questo il bello.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- PROSSIMI ESCAPE -->
-  <section class="ais-sec ais-sec--sand" id="date">
+  <section class="ais-sec ais-sec--sand ais-sec--tint" id="date">
     <div class="ais-wrap">
       <div class="ais-narrow"><span class="ais-eyebrow">Prossimi Escape</span><h2 class="ais-display">Le prossime edizioni.</h2>
         <p class="ais-lead ais-muted" style="margin-top:12px">Piccolo gruppo, posti limitati. Scrivimi per assicurarti il posto.</p></div>
@@ -222,7 +236,7 @@
   </section>
 
   <!-- DATI OPERATIVI -->
-  <section class="ais-sec ais-sec--cream" id="dati">
+  <section class="ais-sec ais-sec--cream ais-sec--tint" id="dati">
     <div class="ais-wrap">
       <div class="ais-narrow"><span class="ais-eyebrow">In pratica</span><h2 class="ais-display">Le informazioni utili.</h2></div>
       <div class="ais-data">
@@ -238,8 +252,18 @@
     </div>
   </section>
 
+  <!-- INTERLUDIO -->
+  <section class="ais-interlude">
+    <div class="ais-interlude__bg"><img alt="Fuoco nel bosco" src="images/accendi-fuoco.jpg"/></div>
+    <div class="ais-interlude__scrim"></div>
+    <div class="ais-wrap ais-narrow">
+      <span class="ais-interlude__mark" aria-hidden="true">“</span>
+      <p class="ais-interlude__q">Il punto non è imparare ad accendere un fuoco.<br/>È tornare a fare esperienza.</p>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section class="ais-sec ais-sec--sand">
+  <section class="ais-sec ais-sec--sand ais-sec--tint">
     <div class="ais-wrap ais-narrow">
       <span class="ais-eyebrow">Domande frequenti</span>
       <h2 class="ais-display">Le domande che ci fanno più spesso.</h2>
@@ -274,12 +298,14 @@
   </section>
 
   <!-- CTA -->
-  <section class="ais-band" id="parliamone">
-    <div class="ais-wrap ais-narrow">
-      <span class="ais-eyebrow" style="color:var(--ais-earth)">Il prossimo passo</span>
-      <h2 class="ais-display">Vuoi capire se Escape è il weekend che stai cercando?</h2>
-      <p class="ais-lead">Scrivimi e raccontami cosa ti ha portato qui. Ti spiego come funziona, cosa aspettarti, cosa serve e se questa esperienza può essere adatta a te.</p>
-      <div class="ais-cta-row" style="margin-top:30px">
+  <section class="ais-photopanel" id="parliamone">
+    <div class="ais-photopanel__bg"><img alt="Escape the City" src="images/escape-the-city.jpg"/></div>
+    <div class="ais-photopanel__scrim" style="background:linear-gradient(180deg,rgba(12,20,12,.62),rgba(12,20,12,.8))"></div>
+    <div class="ais-wrap ais-narrow ais-center">
+      <span class="ais-eyebrow ais-eyebrow--onphoto">Il prossimo passo</span>
+      <h2 class="ais-display" style="color:#fff">Vuoi capire se Escape è il weekend che stai cercando?</h2>
+      <p class="ais-lead" style="color:rgba(255,255,255,.9)">Scrivimi e raccontami cosa ti ha portato qui. Ti spiego come funziona, cosa aspettarti, cosa serve e se questa esperienza può essere adatta a te.</p>
+      <div class="ais-cta-row" style="justify-content:center;margin-top:30px">
         <a class="ais-btn-dark ais-arrow" href="https://wa.me/+393667187733" target="_blank" rel="noopener noreferrer" style="background:var(--ais-cream);color:var(--ais-forest-deep)">Parliamone</a>
         <a class="ais-btn-ghost" href="#date" style="color:#fff;border-color:rgba(255,255,255,.6)">Vedi le date</a>
       </div>
