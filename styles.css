@@ -348,3 +348,150 @@ button[data-loading]{opacity:.6;cursor:progress;}
 }
 
 .ais-sec--cream .ais-quote{background:#fff;}
+
+/* =========================================================================
+   ABITARE IL SENTIERO — v2 "fotografico-editoriale" (2026)
+   Override + nuovi componenti. Priorità a foto, contrasto AA, dettaglio.
+   ========================================================================= */
+:root{ --ais-ink:rgb(31 29 25); --ais-ink-2:#4a463e; --ais-line:rgb(226 219 206); }
+
+/* ---- tipografia editoriale ---- */
+body{color:var(--ais-ink);}
+.ais-lead{font-size:clamp(17px,1.4vw,19px);line-height:1.72;color:var(--ais-ink);}
+.ais-display{letter-spacing:-.015em;line-height:1.06;}
+.ais-muted{color:var(--ais-ink-2);}
+.ais-sec--forest .ais-muted,.ais-full .ais-muted,.ais-band .ais-muted,.ais-hero .ais-muted,.ais-statement .ais-muted{color:rgba(255,255,255,.74);}
+.ais-narrow{max-width:64ch;}
+
+/* ---- eyebrow leggibile per contesto ---- */
+.ais-eyebrow{color:var(--ais-forest);font-weight:600;letter-spacing:.16em;display:inline-flex;align-items:center;gap:.5em;}
+.ais-eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.5;display:inline-block;}
+.ais-sec--forest .ais-eyebrow,.ais-full .ais-eyebrow,.ais-band .ais-eyebrow,.ais-hero__eyebrow,.ais-statement .ais-eyebrow{color:var(--ais-earth);}
+
+/* ---- icone a linea ---- */
+.ais-ico{width:1em;height:1em;display:inline-block;vertical-align:-.14em;fill:none;stroke:currentColor;
+  stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;}
+.ais-ico-sprite{position:absolute;width:0;height:0;overflow:hidden;}
+
+/* ---- HERO: scrim più forte per AA sul testo ---- */
+.ais-hero__scrim{background:linear-gradient(180deg,rgba(18,30,18,.5) 0%,rgba(18,30,18,.32) 42%,rgba(18,30,18,.86) 100%);}
+.ais-hero__lead{color:rgba(255,255,255,.86);}
+.ais-hero__title{letter-spacing:-.025em;}
+.ais-scrollcue{margin-top:40px;color:rgba(255,255,255,.7);font-size:26px;line-height:1;animation:ais-bob 2.4s ease-in-out infinite;}
+@keyframes ais-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* ---- statement / full-bleed foto (scrim AA) ---- */
+.ais-full{padding:150px 0;}
+.ais-full__scrim{background:linear-gradient(90deg,rgba(12,20,12,.86) 0%,rgba(12,20,12,.62) 46%,rgba(12,20,12,.28) 100%);}
+.ais-full .ais-lead{color:rgba(255,255,255,.9);}
+.ais-full__bg img{filter:saturate(.92) brightness(.96);}
+
+/* ---- editorial split: foto grande + caption ---- */
+.ais-show{gap:56px;align-items:center;}
+.ais-show__media{border-radius:14px;box-shadow:0 24px 60px -30px rgba(20,30,18,.5);}
+.ais-figure{position:relative;}
+.ais-figure figcaption{margin-top:12px;font-family:Inter,system-ui,sans-serif;font-size:12.5px;
+  letter-spacing:.02em;color:var(--ais-ink-2);display:flex;align-items:center;gap:8px;}
+
+/* ---- pratiche: editoriale con icona, meno "boxed" ---- */
+.ais-grid{gap:2px 40px;}
+.ais-practice{background:transparent;border:0;border-top:1px solid var(--ais-line);border-radius:0;padding:26px 0;}
+.ais-sec--cream .ais-practice,.ais-sec--sand .ais-practice{background:transparent;}
+.ais-practice__ico{font-size:26px;color:var(--ais-forest);margin-bottom:14px;display:block;}
+.ais-practice h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:23px;font-weight:600;letter-spacing:0;
+  text-transform:none;color:var(--ais-forest-deep);margin:0 0 8px;}
+.ais-practice p{color:var(--ais-ink-2);font-size:15px;}
+
+/* ---- Testa · Cuore · Mani con icone ---- */
+.ais-triptych__ico{font-size:34px;color:var(--ais-earth);margin-bottom:16px;display:inline-block;}
+.ais-triptych__c h3{color:#fff;}
+.ais-triptych__c p{color:rgba(255,255,255,.9);}
+
+/* ---- checks: marcatori a icona ---- */
+.ais-checks li{padding-left:34px;color:var(--ais-ink);}
+.ais-checks--yes li::before{content:"";width:20px;height:20px;border-radius:0;background:none;left:0;top:3px;
+  border:1.6px solid var(--ais-forest);-webkit-mask:none;}
+.ais-checks--yes li{position:relative;}
+.ais-checks--yes li::after{content:"";position:absolute;left:6px;top:8px;width:8px;height:4px;
+  border-left:1.6px solid var(--ais-forest);border-bottom:1.6px solid var(--ais-forest);transform:rotate(-45deg);}
+.ais-checks--no li::before{content:"";width:20px;height:20px;border-radius:0;background:none;left:0;top:3px;
+  border:1.6px solid var(--ais-earth-dark);}
+.ais-checks--no li::after{content:"";position:absolute;left:5px;top:12px;width:10px;height:1.6px;background:var(--ais-earth-dark);}
+
+/* ---- flow: hairline stepper ---- */
+.ais-flow__a{color:var(--ais-earth);opacity:.8;}
+.ais-flow__s{color:var(--ais-forest-deep);}
+
+/* ---- card esperienze: più fotografiche ---- */
+.ais-exp{border:1px solid var(--ais-line);border-radius:14px;box-shadow:0 1px 0 rgba(20,30,18,.02);transition:box-shadow .3s ease,transform .3s ease;}
+.ais-exp:hover{box-shadow:0 30px 60px -34px rgba(20,30,18,.55);transform:translateY(-3px);}
+.ais-exp__media{aspect-ratio:3/2;}
+.ais-exp__tag{color:var(--ais-moss);}
+.ais-exp__d{color:var(--ais-ink-2);}
+.ais-exp__cta{display:inline-flex;align-items:center;gap:.4em;}
+
+/* ---- calendario: icone + contrasto ---- */
+.ais-cal__row{border-color:var(--ais-line);}
+.ais-cal__row:hover{background:rgba(45,90,39,.03);}
+.ais-cal__date b{color:var(--ais-forest-deep);}
+.ais-cal__date span{color:var(--ais-moss);}
+.ais-cal__meta{color:var(--ais-ink-2);display:inline-flex;align-items:center;gap:8px;}
+.ais-cal__meta .ais-ico{font-size:15px;color:var(--ais-earth-dark);}
+.ais-cal__t{color:var(--ais-forest-deep);}
+
+/* ---- testimonianze: chrome sobrio ---- */
+.ais-vtest__card{border-color:var(--ais-line);border-radius:14px;}
+.ais-vtest__cap{color:var(--ais-ink-2);}
+.ais-vtest__hint{color:var(--ais-ink-2);}
+.ais-vtest__hint em{color:var(--ais-earth-dark);}
+.ais-quote{background:#fff;border-left:2px solid var(--ais-earth);box-shadow:0 1px 0 var(--ais-line);}
+.ais-quote p{color:var(--ais-forest-deep);}
+.ais-quote cite{color:var(--ais-ink-2);}
+
+/* ---- dati / faq ---- */
+.ais-data__row{border-color:var(--ais-line);}
+.ais-data__k{color:var(--ais-moss);display:inline-flex;align-items:center;gap:8px;}
+.ais-data__v{color:var(--ais-ink);}
+.ais-data__v .todo{color:var(--ais-earth-dark);}
+.ais-faq details{border-color:var(--ais-line);}
+.ais-faq summary{color:var(--ais-forest-deep);}
+.ais-faq p{color:var(--ais-ink-2);}
+
+/* ---- bottoni + focus accessibile ---- */
+.ais-btn-dark,.ais-btn-ghost,.ais-textlink{transition:all .25s ease;}
+.ais-btn-dark:focus-visible,.ais-btn-ghost:focus-visible,.ais-textlink:focus-visible,
+.nav-link:focus-visible,.nav-cta:focus-visible,.ais-exp__link:focus-visible,a:focus-visible,summary:focus-visible{
+  outline:2px solid var(--ais-earth);outline-offset:3px;border-radius:4px;}
+.ais-cta-row .ais-btn-dark:hover{transform:translateY(-2px);}
+
+/* ---- band chiusura ---- */
+.ais-band{background:var(--ais-forest-deep);}
+.ais-band .ais-lead{color:rgba(255,255,255,.85);}
+
+/* ---- micro-reveal (lento, reduced-motion-safe; applicato via JS) ---- */
+.ais-anim main > section{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.ais-anim main > section.ais-shown{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .ais-anim main > section{opacity:1 !important;transform:none !important;transition:none !important;}
+  .ais-scrollcue{animation:none;}
+}
+
+/* --- riga di icone (es. "cosa succede") --- */
+.ais-iconrow{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:24px;list-style:none;padding:0;}
+.ais-iconrow li{display:inline-flex;align-items:center;gap:9px;font-family:Inter,system-ui,sans-serif;
+  font-size:14px;font-weight:500;color:var(--ais-ink-2);}
+.ais-iconrow .ais-ico{font-size:18px;color:var(--ais-forest);}
+.ais-practice__ico,.ais-triptych__ico,.ais-eyebrow .ais-ico{pointer-events:none;}
+
+/* --- rifiniture header/eyebrow --- */
+.ais-center .ais-eyebrow::before,.ais-hero__eyebrow::before{display:none;}
+.ais-hero__eyebrow{letter-spacing:.2em;}
+.site-header.scrolled{box-shadow:0 1px 0 rgba(20,30,18,.08),0 10px 30px -20px rgba(20,30,18,.35);}
+.site-header .nav-link{letter-spacing:.02em;}
+.nav-dropdown-menu a{transition:background .18s ease,color .18s ease;}
+/* immagini editoriali: resa più fotografica */
+.ais-show__media img,.ais-show__media video,.ais-about__media img,.ais-exp__media img,.ais-exp__media video{filter:saturate(.96);}
+
+/* --- contrasto AA anche sulle piccole etichette/note --- */
+.ais-cal__date span{color:var(--ais-forest);}
+.ais-cal__note,.ais-data__v .todo,.ais-vtest__hint em,.ais-figure figcaption{color:#6b5636;}

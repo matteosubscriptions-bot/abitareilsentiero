@@ -97,4 +97,29 @@
   } else {
     loadIncludes().then(initNav);
   }
+
+  // Micro-reveal delle sezioni (lento, discreto). Rispetta prefers-reduced-motion
+  // e degrada in modo sicuro: se qualcosa va storto, tutto resta visibile.
+  function initReveal() {
+    try {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) return;
+      var root = document.documentElement;
+      root.classList.add("ais-anim");
+      var sections = document.querySelectorAll("main > section");
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("ais-shown"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      sections.forEach(function (s, i) { if (i < 2) s.classList.add("ais-shown"); else io.observe(s); });
+      // rete di sicurezza: rivela tutto dopo 2.5s in ogni caso
+      setTimeout(function () { sections.forEach(function (s) { s.classList.add("ais-shown"); }); }, 2500);
+    } catch (e) { /* no-op: contenuto resta visibile */ }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initReveal);
+  } else {
+    initReveal();
+  }
 })();

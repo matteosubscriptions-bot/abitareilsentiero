@@ -112,8 +112,16 @@ nomi da mantenere):
 - `videos/hero.mp4`, `videos/mappa-viaggio.mp4` — clip segnaposto
 - `images/testimonial-1.jpg … testimonial-6.jpg` +
   `videos/testimonial-1.mp4 … testimonial-6.mp4` — **testimonianze video
-  segnaposto** (ritratto con pulsante play + breve clip). Sostituiscile con i
-  video/foto reali dei partecipanti mantenendo gli stessi nomi file; i testi
-  delle citazioni sono nelle sezioni testimonianze di `index.html` ed
-  `escape-the-city.html` e vanno rimpiazzati con quelli veri.
+  segnaposto** (poster fotografico ricavato dalle foto delle esperienze, con
+  icona play + breve clip). Sostituiscile con i video/foto reali dei
+  partecipanti mantenendo gli stessi nomi file; i testi delle citazioni sono
+  nelle sezioni testimonianze di `index.html` ed `escape-the-city.html`.
+
+> **Nota sul look fotografico.** Home ed Escape usano un impianto
+> foto-guidato (sezioni full-bleed con testo su scrim scuro, split
+> immagine+testo, icone a linea). Rende al meglio con **foto professionali
+> reali**: le immagini attuali sono stand-in di buona qualità ma diverse sono
+> placeholder/b-roll. Sostituendo le foto (stessi nomi file) la resa migliora
+> molto. Le icone sono SVG inline in `index.html`/`escape-the-city.html`
+> (sprite `#i-*`), lo stile è tutto in `styles.css` (layer `.ais-*`).
 - `downloads/dalla-sopravvivenza-alla-convivenza.pdf` — la guida (da caricare)
