@@ -126,6 +126,17 @@ nomi da mantenere):
 > (sprite `#i-*`), lo stile è tutto in `styles.css` (layer `.ais-*`).
 - `downloads/dalla-sopravvivenza-alla-convivenza.pdf` — la guida (da caricare)
 
+> **Segnaposto di copy da completare** (cerca `[da completare]` / `[da definire]` nelle pagine).
+> - **Prezzi**: Escape the City è in chiaro (€125 early bird fino a 10 giorni prima, poi €145). Le
+>   altre esperienze hanno una riga "Investimento → scrivimi per il prezzo": inserisci le cifre
+>   quando le definisci.
+> - **Logistica esperienze**: nelle sezioni "Info utili" alcune righe (Pernottamento, Pasti,
+>   Attrezzatura, Punto di ritrovo) sono segnaposto: completale con i dati reali di ogni edizione.
+> - **Testimonianze**: Escape/Accendi/Mappa mostrano testimonianze **segnaposto** da sostituire con
+>   quelle reali. Cammino, Via degli Dei ed Elementi (non ancora realizzate) mostrano invece frasi
+>   **illustrative non attribuite** ("Cosa potresti portarti a casa"): quando avrai partecipanti
+>   reali, sostituiscile con testimonianze vere attribuite.
+
 > **Timeline di Chi Sono.** La sezione "Il percorso" in `chi-sono.html` usa una
 > timeline con un'immagine per tappa (corporate → furgone → agricoltura →
 > ecovillaggi → oggi). Le foto attuali (`full-abitare.jpg`, `full-avventura.jpg`,
