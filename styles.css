@@ -165,9 +165,10 @@ button[data-loading]{opacity:.6;cursor:progress;}
 .ais-hero__inner{position:relative;z-index:2;text-align:center;padding:120px 24px 64px;max-width:900px;}
 .ais-hero__eyebrow{color:var(--ais-earth);letter-spacing:.16em;}
 .ais-hero__title{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:#fff;
-  font-size:clamp(40px,8vw,88px);line-height:1.02;letter-spacing:-.02em;margin:0;}
-.ais-hero__sub{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:var(--ais-forest-light);
-  font-size:clamp(24px,4.5vw,44px);line-height:1.1;margin:.2em 0 0;}
+  font-size:clamp(40px,8vw,88px);line-height:1.02;letter-spacing:-.02em;margin:0;
+  text-shadow:0 2px 30px rgba(12,20,12,.45);}
+.ais-hero__sub{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:#f3efe6;
+  font-size:clamp(24px,4.5vw,44px);line-height:1.1;margin:.2em 0 0;text-shadow:0 2px 24px rgba(12,20,12,.5);}
 .ais-hero__lead{font-family:Inter,system-ui,sans-serif;color:rgba(255,255,255,.72);font-size:clamp(16px,2vw,19px);
   line-height:1.6;max-width:620px;margin:22px auto 0;}
 .ais-microrow{margin:22px auto 0;font-family:Inter,system-ui,sans-serif;font-size:13px;letter-spacing:.04em;
@@ -203,7 +204,8 @@ button[data-loading]{opacity:.6;cursor:progress;}
 .ais-contrast li{padding:16px 0;border-top:1px solid rgba(255,255,255,.16);
   font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(20px,2.6vw,26px);line-height:1.25;color:#fff;}
 .ais-contrast li b{font-weight:600;}
-.ais-contrast li span{display:block;font-size:.7em;color:rgba(255,255,255,.6);font-style:italic;}
+.ais-contrast li span{display:block;margin-top:3px;font-family:Inter,system-ui,sans-serif;
+  font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.82);font-style:normal;letter-spacing:.005em;}
 @media(max-width:640px){.ais-contrast{grid-template-columns:1fr;}}
 
 /* MOSTRA → DOMANDA → SIGNIFICATO */
@@ -414,16 +416,16 @@ body{color:var(--ais-ink);}
 .ais-triptych__c h3{color:#fff;}
 .ais-triptych__c p{color:rgba(255,255,255,.9);}
 
-/* ---- checks: marcatori a icona ---- */
-.ais-checks li{padding-left:34px;color:var(--ais-ink);}
-.ais-checks--yes li::before{content:"";width:20px;height:20px;border-radius:0;background:none;left:0;top:3px;
-  border:1.6px solid var(--ais-forest);-webkit-mask:none;}
-.ais-checks--yes li{position:relative;}
-.ais-checks--yes li::after{content:"";position:absolute;left:6px;top:8px;width:8px;height:4px;
-  border-left:1.6px solid var(--ais-forest);border-bottom:1.6px solid var(--ais-forest);transform:rotate(-45deg);}
-.ais-checks--no li::before{content:"";width:20px;height:20px;border-radius:0;background:none;left:0;top:3px;
-  border:1.6px solid var(--ais-earth-dark);}
-.ais-checks--no li::after{content:"";position:absolute;left:5px;top:12px;width:10px;height:1.6px;background:var(--ais-earth-dark);}
+/* ---- checks: badge a icona (SVG), più curati ---- */
+.ais-checks li{position:relative;padding-left:36px;color:var(--ais-ink);}
+/* "sì": pastiglia forest con spunta bianca */
+.ais-checks--yes li::before{content:"";position:absolute;left:0;top:1px;width:22px;height:22px;border:0;border-radius:50%;
+  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%232d5a27'/%3E%3Cpath d='M7 12.4l3.2 3.1L17 8.6' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
+.ais-checks--yes li::after{content:none;}
+/* "no": cerchio earth con × discreta */
+.ais-checks--no li::before{content:"";position:absolute;left:0;top:1px;width:22px;height:22px;border:0;border-radius:50%;
+  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='none' stroke='%238b7355' stroke-width='1.5'/%3E%3Cpath d='M8.6 8.6l6.8 6.8M15.4 8.6l-6.8 6.8' fill='none' stroke='%238b7355' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");opacity:.9;}
+.ais-checks--no li::after{content:none;}
 
 /* ---- flow: hairline stepper ---- */
 .ais-flow__a{color:var(--ais-earth);opacity:.8;}
@@ -589,3 +591,36 @@ body{color:var(--ais-ink);}
 .ais-glass--dark .ais-eyebrow{color:var(--ais-earth);}
 .ais-glasscard.ais-glass--dark .ais-display{color:#fff;}
 .ais-photopanel .ais-triptych__c h3{color:#fff;}
+
+/* ============================================================
+   v4 — revisione feedback: statement verde, timeline, rifiniture
+   ============================================================ */
+
+/* --- Flow "Dal fare allo stare" come statement su fondo verde --- */
+.ais-statement{background:var(--ais-forest-deep);color:#fff;text-align:center;padding:clamp(72px,10vw,120px) 0;position:relative;}
+.ais-statement .ais-eyebrow{color:var(--ais-earth);}
+.ais-statement .ais-lead{color:rgba(255,255,255,.82);}
+.ais-statement .ais-flow{max-width:640px;margin-top:36px;}
+.ais-statement .ais-flow__s{font-size:clamp(30px,5.2vw,52px);color:#fff;line-height:1.08;}
+.ais-statement .ais-flow__s:last-child{color:#efe6d4;font-style:italic;}
+.ais-statement .ais-flow__a{color:var(--ais-earth);font-size:22px;opacity:.9;margin:6px 0;}
+
+/* --- Timeline della storia (Chi Sono), con immagini --- */
+.ais-timeline{margin:52px 0 0;position:relative;display:grid;gap:0;}
+.ais-tl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center;
+  padding:clamp(28px,4vw,44px) 0;position:relative;}
+.ais-tl+.ais-tl{border-top:1px solid var(--ais-line);}
+.ais-tl__media{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;
+  box-shadow:0 18px 44px rgba(31,41,25,.14);}
+.ais-tl__media img{width:100%;height:100%;object-fit:cover;display:block;}
+.ais-tl__yr{font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ais-moss);display:inline-flex;align-items:center;gap:.55em;margin-bottom:10px;}
+.ais-tl__yr::before{content:"";width:22px;height:1px;background:currentColor;opacity:.6;}
+.ais-tl__t{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(24px,3.4vw,34px);
+  line-height:1.15;color:var(--ais-forest-deep);margin:0 0 10px;}
+.ais-tl__d{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.7;color:var(--ais-ink-2);margin:0;}
+.ais-tl:nth-child(even) .ais-tl__media{order:2;}
+@media(max-width:760px){
+  .ais-tl{grid-template-columns:1fr;gap:18px;}
+  .ais-tl:nth-child(even) .ais-tl__media{order:0;}
+}

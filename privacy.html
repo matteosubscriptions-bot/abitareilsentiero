@@ -14,7 +14,45 @@
 <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-<div data-include="partials/header.html"></div>
+<!-- header condiviso (fonte: partials/header.html) -->
+<header class="site-header fixed top-0 left-0 right-0 z-50 h-[72px]" id="site-header">
+<div class="content-max-width h-full flex items-center justify-between">
+<a class="nav-logo font-display text-[22px] font-medium text-white" href="index.html">Abitare il sentiero</a>
+<nav class="hidden lg:flex items-center gap-8">
+<div class="nav-dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="nav-link font-body text-sm font-medium tracking-wider text-white" id="exp-toggle">Esperienze</button>
+<div class="nav-dropdown-menu" id="exp-menu">
+<a href="escape-the-city.html">Escape the City</a>
+<a href="accendi-il-tuo-fuoco.html">Accendi il tuo Fuoco</a>
+<a href="la-mappa-del-tuo-viaggio.html">La Mappa del tuo Viaggio</a>
+<a href="via-degli-dei.html">Via degli Dei</a>
+<a href="cammino.html">Il Cammino</a>
+<a href="elementi-di-convivenza.html">Elementi di Convivenza</a>
+</div>
+</div>
+<a class="nav-link font-body text-sm font-medium tracking-wider text-white" href="chi-sono.html">Chi sono</a>
+<a class="nav-link font-body text-sm font-medium tracking-wider text-white" href="index.html#date">Date</a>
+<a class="nav-link font-body text-sm font-medium tracking-wider text-white" href="#contatti">Contatti</a>
+</nav>
+<a class="nav-cta hidden lg:inline-flex items-center gap-2 rounded-full px-5 py-3 font-body text-sm font-semibold tracking-wider bg-forest text-white hover:bg-forest-light transition-all duration-300" href="https://wa.me/+393667187733" rel="noopener noreferrer" target="_blank">Scrivimi</a>
+<button aria-label="Menu" class="nav-burger lg:hidden p-2 text-white" id="nav-burger" type="button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+</button>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+<a href="index.html">Home</a>
+<a href="escape-the-city.html">Escape the City</a>
+<a href="accendi-il-tuo-fuoco.html">Accendi il tuo Fuoco</a>
+<a href="la-mappa-del-tuo-viaggio.html">La Mappa del tuo Viaggio</a>
+<a href="via-degli-dei.html">Via degli Dei</a>
+<a href="cammino.html">Il Cammino</a>
+<a href="elementi-di-convivenza.html">Elementi di Convivenza</a>
+<a href="chi-sono.html">Chi sono</a>
+<a href="index.html#date">Date</a>
+<a href="#contatti">Contatti</a>
+<a class="mobile-cta" href="https://wa.me/+393667187733" rel="noopener noreferrer" target="_blank">Scrivimi su WhatsApp</a>
+</div>
+</header>
 
 <main class="legal-page">
   <h1>Privacy Policy</h1>
@@ -91,7 +129,8 @@
   pagina, con la data di ultimo aggiornamento indicata in alto.</p>
 </main>
 
-<div data-include="partials/footer.html"></div>
+<!-- footer condiviso (fonte: partials/footer.html) -->
+<footer class="bg-forest-deep pt-16 pb-10" id="contatti"><div class="content-max-width"><div class="grid grid-cols-1 md:grid-cols-4 gap-10"><div><a class="font-display text-2xl text-white" href="#abitare">Abitare il sentiero</a><p class="font-body text-sm text-white/50 mt-2">Esci dalla modalità sopravvivenza.</p><div class="flex items-center gap-4 mt-4"><a aria-label="Instagram" class="text-white/50 hover:text-white transition-colors" href="https://instagram.com/abitareilsentiero" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a><a aria-label="Facebook" class="text-white/50 hover:text-white transition-colors" href="https://facebook.com/abitareilsentiero" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a aria-label="LinkedIn" class="text-white/50 hover:text-white transition-colors" href="https://linkedin.com/in/matteo-mancini-outdoor" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div></div><div><p class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-earth mb-4">Esperienze</p><div class="flex flex-col gap-2.5"><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="escape-the-city.html">Escape the City</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="accendi-il-tuo-fuoco.html">Accendi il tuo Fuoco</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="la-mappa-del-tuo-viaggio.html">La Mappa del tuo Viaggio</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="via-degli-dei.html">Via degli Dei</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="cammino.html">Il Cammino</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="elementi-di-convivenza.html">Elementi di Convivenza</a></div></div><div><p class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-earth mb-4">Navigazione</p><div class="flex flex-col gap-2.5"><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="#abitare">Home</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="chi-sono.html">Chi sono</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="#date">Date</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="#contatti">Contatti</a></div></div><div><p class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-earth mb-4">Contatti</p><div class="flex flex-col gap-2.5"><a class="font-body text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2" href="https://wa.me/+393667187733" rel="noopener noreferrer" target="_blank">+39 3667187733</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="mailto:abitareilsentiero@gmail.com">abitareilsentiero@gmail.com</a><a class="font-body text-sm text-white/60 hover:text-white transition-colors" href="https://instagram.com/abitareilsentiero" rel="noopener noreferrer" target="_blank">@abitareilsentiero</a></div></div></div><div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body text-[13px] text-white/30">© 2026 Abitare il Sentiero. Tutti i diritti riservati.</p><p class="font-body text-[13px] text-white/30">Fatto con cura da Matteo Mancini</p></div></div><div class="footer-legal content-max-width"><a href="privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="cookie-policy.html">Cookie Policy</a><span aria-hidden="true">·</span><button class="footer-legal-btn" id="manage-cookies" type="button">Gestisci cookie</button></div></footer>
 <script src="config.js"></script>
 <script src="site.js"></script>
 <script src="cookies.js"></script>

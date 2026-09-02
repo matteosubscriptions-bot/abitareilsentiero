@@ -37,16 +37,16 @@ inclusi in ogni pagina tramite uno script classico.
 ├── favicon.ico · robots.txt · .htaccess
 ```
 
-## Header e footer condivisi (una sola copia)
+## Header e footer condivisi
 
-Non sono più ripetuti dentro ogni pagina: si modificano **una sola volta** in
-`partials/header.html` e `partials/footer.html`. Ogni pagina contiene solo un
-segnaposto `<div data-include="partials/header.html"></div>` che `site.js`
-riempie al caricamento. Nessun `type="module"`, quindi nessun problema di MIME.
-
-> ⚠️ Poiché gli include vengono caricati via `fetch`, il sito va aperto tramite
-> un **server** (hosting reale o `python3 -m http.server`), non con un
-> doppio-clic `file://`.
+Il menu (header) e il footer sono **incorporati direttamente in ogni pagina**,
+così compaiono **sempre**, anche se il server non serve gli include via `fetch`.
+La **fonte unica** resta in `partials/header.html` e `partials/footer.html`: se
+modifichi il menu o il footer, aggiornali lì e ricopiane il contenuto in ogni
+pagina (il blocco è delimitato dal commento
+`<!-- header condiviso (fonte: partials/header.html) -->`). `site.js` gestisce
+solo i comportamenti del menu (tendina, menu mobile, scroll fluido). Nessun
+`type="module"`, quindi nessun problema di MIME.
 
 ## Configurazione — file `config.js`
 
@@ -125,3 +125,9 @@ nomi da mantenere):
 > molto. Le icone sono SVG inline in `index.html`/`escape-the-city.html`
 > (sprite `#i-*`), lo stile è tutto in `styles.css` (layer `.ais-*`).
 - `downloads/dalla-sopravvivenza-alla-convivenza.pdf` — la guida (da caricare)
+
+> **Timeline di Chi Sono.** La sezione "Il percorso" in `chi-sono.html` usa una
+> timeline con un'immagine per tappa (corporate → furgone → agricoltura →
+> ecovillaggi → oggi). Le foto attuali (`full-abitare.jpg`, `full-avventura.jpg`,
+> `full-natura.jpg`, `cammino-cerchio.jpg`, `full-cammino.jpg`) sono **stand-in**:
+> sostituiscile con foto reali della tua storia mantenendo gli stessi nomi file.
