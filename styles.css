@@ -539,10 +539,9 @@ body{color:var(--ais-ink);}
 .ais-sec--tint{position:relative;}
 .ais-sec--tint::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background-image:
-    radial-gradient(1100px 520px at 12% -8%, rgba(45,90,39,.06), transparent 62%),
-    radial-gradient(900px 460px at 102% 108%, rgba(196,169,125,.10), transparent 60%),
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27440%27%20height%3D%27280%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%232d5a27%27%20stroke-width%3D%271%27%3E%3Cpath%20d%3D%27M0%2048C120%2016%20320%2080%20440%2048%27%2F%3E%3Cpath%20d%3D%27M0%20104C140%2072%20300%20136%20440%20104%27%2F%3E%3Cpath%20d%3D%27M0%20160C120%20128%20320%20192%20440%20160%27%2F%3E%3Cpath%20d%3D%27M0%20216C140%20184%20300%20248%20440%20216%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  background-repeat:no-repeat,no-repeat,repeat;background-size:auto,auto,440px 280px;
+    radial-gradient(1100px 520px at 12% -8%, rgba(45,90,39,.045), transparent 62%),
+    radial-gradient(900px 460px at 102% 108%, rgba(196,169,125,.07), transparent 60%);
+  background-repeat:no-repeat,no-repeat;
   opacity:.9;}
 .ais-sec--tint > *{position:relative;z-index:1;}
 
